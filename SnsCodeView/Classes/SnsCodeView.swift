@@ -18,12 +18,13 @@ class SnsCodeView: UIView {
     private var cursorColor: UIColor?
     private var emptylLineColor: UIColor?
     private var fillLineColor: UIColor?
+    private var font: UIFont?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
 
-    convenience init(maxNum: CGFloat, cursorColor: UIColor? = UIColor(red: 255.0 / 255.0, green: 204.0 / 255.0, blue: 79.0 / 255.0, alpha: 1), emptylLineColor: UIColor? = UIColor(red: 239.0 / 255.0, green: 239.0 / 255.0, blue: 239.0 / 255.0, alpha: 1), fillLineColor: UIColor? = UIColor(red: 74.0 / 255.0, green: 74.0 / 255.0, blue: 74.0 / 255.0, alpha: 1), estimatedItemWidth: CGFloat? = 42.0, estimatedHeight: CGFloat? = 40.0, complete: @escaping ((String) -> Void)) {
+    convenience init(maxNum: CGFloat, cursorColor: UIColor? = UIColor(red: 255.0 / 255.0, green: 204.0 / 255.0, blue: 79.0 / 255.0, alpha: 1), emptylLineColor: UIColor? = UIColor(red: 239.0 / 255.0, green: 239.0 / 255.0, blue: 239.0 / 255.0, alpha: 1), fillLineColor: UIColor? = UIColor(red: 74.0 / 255.0, green: 74.0 / 255.0, blue: 74.0 / 255.0, alpha: 1), font: UIFont? = UIFont.systemFont(ofSize: 20.0), estimatedItemWidth: CGFloat? = 42.0, estimatedHeight: CGFloat? = 40.0, complete: @escaping ((String) -> Void)) {
         self.init(frame: .zero)
         self.maxNum = maxNum
         self.cursorColor = cursorColor
@@ -31,6 +32,7 @@ class SnsCodeView: UIView {
         self.fillLineColor = fillLineColor
         self.itemWidth = estimatedItemWidth ?? 42.0
         self.itemHeight = estimatedHeight ?? 40.0
+        self.font = font
         self.complete = complete
         configureUI()
     }
@@ -40,7 +42,7 @@ class SnsCodeView: UIView {
     }
 
     private func configureUI() {
-        guard let cursorColor = cursorColor, let emptylLineColor = emptylLineColor, let fillLineColor = fillLineColor else { return }
+        guard let cursorColor = cursorColor, let emptylLineColor = emptylLineColor, let fillLineColor = fillLineColor, let font = font else { return }
         textView = UITextView()
         textView?.delegate = self
         textView?.textColor = .clear
@@ -67,7 +69,7 @@ class SnsCodeView: UIView {
             let label = UILabel()
             label.textAlignment = .center
             label.textColor = fillLineColor
-            label.font = UIFont.CPBoldFont(size: Constants.CPFontSize(.l))
+            label.font = font
             itemView.addSubview(label)
             label.snp.makeConstraints { (make) in
                 make.edges.equalToSuperview()
