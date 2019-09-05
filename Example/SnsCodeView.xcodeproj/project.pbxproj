@@ -41,10 +41,10 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6B116FE813490B5392BF929E /* Pods-SnsCodeView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnsCodeView_Example.debug.xcconfig"; path = "Target Support Files/Pods-SnsCodeView_Example/Pods-SnsCodeView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6E65066491A976D9729C8617 /* Pods_SnsCodeView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnsCodeView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D71C280DF2FA034FDF00AF3 /* SnsCodeView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SnsCodeView.podspec; path = ../SnsCodeView.podspec; sourceTree = "<group>"; };
+		7D71C280DF2FA034FDF00AF3 /* SnsCodeView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SnsCodeView.podspec; path = ../SnsCodeView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97049DE0FFB777865D7A3FBF /* Pods-SnsCodeView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnsCodeView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SnsCodeView_Tests/Pods-SnsCodeView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D6EFE51EDBDA10FEFA371347 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		E06121F360DBA8B1B39C9551 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D6EFE51EDBDA10FEFA371347 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E06121F360DBA8B1B39C9551 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		EE48BC47750A0139AE818FF1 /* Pods_SnsCodeView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnsCodeView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2490301AF214FD931A19D94 /* Pods-SnsCodeView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnsCodeView_Example.release.xcconfig"; path = "Target Support Files/Pods-SnsCodeView_Example/Pods-SnsCodeView_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,7 +77,6 @@
 				97049DE0FFB777865D7A3FBF /* Pods-SnsCodeView_Tests.debug.xcconfig */,
 				5946F08FBF017439AFB19F2F /* Pods-SnsCodeView_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
