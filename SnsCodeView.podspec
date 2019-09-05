@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SnsCodeView'
-  s.version          = '0.2.2'
+  s.version          = '0.2.3'
   s.summary          = 'A short description of SnsCodeView.'
 
 # This description is used to generate tags and improve search results.
@@ -33,6 +33,6 @@ Pod::Spec.new do |s|
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit', 'Foundation'
+  s.frameworks = 'UIKit', 'Foundation', 'QuartzCore'
   s.dependency 'SnapKit'
 end

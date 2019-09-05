@@ -5,6 +5,7 @@
 
 import UIKit
 import SnapKit
+import QuartzCore
 
 class SnsCodeView: UIView {
     private var maxNum: CGFloat = 4.0
@@ -130,6 +131,22 @@ class SnsCodeView: UIView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         textView?.becomeFirstResponder()
     }
+    
+    func subString(sourceString: String , start:Int, length:Int = -1) -> String {
+        if sourceString == "" {
+            return ""
+        }
+        if sourceString.count < (start + length) {
+            return sourceString
+        }
+        var len = length
+        if len == -1 {
+            len = sourceString.count - start
+        }
+        let st = sourceString.index(startIndex, offsetBy:start)
+        let en = sourceString.index(st, offsetBy:len)
+        return String(sourceString[st ..< en])
+    }
 }
 
 extension SnsCodeView: UITextViewDelegate {
@@ -148,7 +165,7 @@ extension SnsCodeView: UITextViewDelegate {
         for (index,value) in labels.enumerated() {
             if index < textString.count {
                 changeViewLayer(index: index, isHidden: true)
-                value.text = textString.subString(start: index, length: 1)
+                value.text = subString(sourceString: textString.subString, start: index, length: 1)
                 lineViews[index].backgroundColor = fillLineColor
             } else {
                 changeViewLayer(index: index, isHidden: index == textString.count ? false : true)
