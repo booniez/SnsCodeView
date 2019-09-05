@@ -110,8 +110,8 @@ class SnsCodeView: UIView {
         opacityAnimation.duration = 0.8
         opacityAnimation.repeatCount = MAXFLOAT
         opacityAnimation.isRemovedOnCompletion = true
-        opacityAnimation.fillMode = .forwards
-        opacityAnimation.timingFunction = CAMediaTimingFunction.init(name: .easeIn)
+        opacityAnimation.fillMode = CAMediaTimingFillMode.forwards
+        opacityAnimation.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeIn)
         return opacityAnimation
     }
     
