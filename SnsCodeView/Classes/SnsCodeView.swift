@@ -111,8 +111,8 @@ class SnsCodeView: UIView {
         opacityAnimation.duration = 0.8
         opacityAnimation.repeatCount = MAXFLOAT
         opacityAnimation.isRemovedOnCompletion = true
-        opacityAnimation.fillMode = CAMediaTimingFillMode.forwards
-        opacityAnimation.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeIn)
+        opacityAnimation.fillMode = .forwards
+        opacityAnimation.timingFunction = CAMediaTimingFunction.init(name: .easeIn)
         return opacityAnimation
     }
     
@@ -132,7 +132,7 @@ class SnsCodeView: UIView {
         textView?.becomeFirstResponder()
     }
     
-    func subString(sourceString: String , start:Int, length:Int = -1) -> String {
+    func transform(sourceString: String , start:Int, length:Int = -1) -> String {
         if sourceString == "" {
             return ""
         }
@@ -165,7 +165,7 @@ extension SnsCodeView: UITextViewDelegate {
         for (index,value) in labels.enumerated() {
             if index < textString.count {
                 changeViewLayer(index: index, isHidden: true)
-                value.text = subString(sourceString: textString.subString, start: index, length: 1)
+                value.text = self.transform(sourceString: textString.subString, start: index, length: 1)
                 lineViews[index].backgroundColor = fillLineColor
             } else {
                 changeViewLayer(index: index, isHidden: index == textString.count ? false : true)
