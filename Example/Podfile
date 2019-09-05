@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SnsCodeView_Example' do
+  pod 'SnsCodeView', :path => '../'
+
+  target 'SnsCodeView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
